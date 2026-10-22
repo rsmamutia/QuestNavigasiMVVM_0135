@@ -20,5 +20,20 @@ fun FormIsian2(
 
     OnSubmitBtnClick: (string, string, string) -> Unit
 ){
+    //variabel lokal untuk menampung inputan form
+    var inputNama by remember { mutableStateOf(value = "") }
+    var  selectedJK by remember { mutableStateOf(value = "") }
+    var inputAlamat by remember { mutableStateOf(value = "") }
 
+    Scaffold(
+        topBar = {
+            TopAppBar(
+                title = { Text(stringResource(id = R.string.home), color = Color.White) },
+                colors = TopAppBarDefaults.mediumTopAppBarColors(
+                    containerColor = colorResource(id = R.color.teal_700)
+                )
+            )
+        }
+    ) { }
+}
 )
