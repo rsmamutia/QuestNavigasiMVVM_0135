@@ -1,0 +1,38 @@
+package com.example.pertemuan6
+
+import android.R
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.TopAppBarDefaults
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.colorResource
+import androidx.compose.ui.res.stringResource
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun TampilData2(
+    nama: String,
+    jenisKelamin: String,
+    alamat: String,
+    onBackBtnClick: () -> Unit
+){
+    val items = listOf(
+        Pair(stringResource(id = R.string.nama_lengkap), nama),
+        Pair(stringResource(id = R.string.jenis_kelamin),jenisKelamin),
+        Pair(stringResource(id = R.string.alamat), alamat)
+    )
+
+    Scaffold(
+        topBar = {
+            TopAppBar(
+                title = { Text(text = stringResource(id = "Tampilan Data"), color = Color.White) },
+                colors = TopAppBarDefaults.mediumTopAppBarColors(
+                    containerColor = colorResource(id = R.color.teal_700)
+                )
+            )
+        }
+    ) { }
+}

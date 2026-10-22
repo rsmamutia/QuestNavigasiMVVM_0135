@@ -1,5 +1,6 @@
 package com.example.pertemuan6
 
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.ModalWideNavigationRail
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
@@ -8,6 +9,7 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import com.example.pertemuan6.view.FormIsian2
+import com.example.pertemuan6.view.TampilData
 
 enum class Navigasi2 {
     FormulirSaya,
@@ -42,6 +44,13 @@ fun DataApp2(
                 )
             }
 
+            composable(route = Navigasi2.Detail.name){
+                TampilData2(
+                    nama = namaSiswa,
+                    jenisKelamin = jkSiswa,
+                    alamat = alamatSiswa
+                )
+            }
         }
     }
 }
